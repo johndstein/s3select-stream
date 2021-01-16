@@ -28,10 +28,9 @@ const main = async () => {
     split(),
     new Parse(),
     new Stringify(),
+    zlib.createGzip(),
   )
-  .on('error', (error) => { console.error(error) })
-
-
+    .on('error', (error) => { console.error(error) })
   const params = {
     Bucket: bucket,
     Key: destKey,

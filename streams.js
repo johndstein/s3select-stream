@@ -51,7 +51,7 @@ class Stringify extends Transform {
   }
   _transform(event, x, done) {
     // console.log('stringifying')
-    done(null, JSON.stringify(`${event}\n`))
+    done(null, `${JSON.stringify(event)}\n`)
   }
   _flush(done) {
     // console.log('stringify flushing')

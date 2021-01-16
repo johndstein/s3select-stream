@@ -28,10 +28,14 @@ const main = async () => {
     Key: sourceKey,
   })
     .promise()
-    // .then((data) => data.Payload.pipe(new S3SelectStream()))
-    // .then((data) => pumpify.obj(data.Payload, new S3SelectStream()))
-    // .then((data) => pumpify(data.Payload, new S3SelectStream(), split()))
-    .then((data) => pumpify(data.Payload, new S3SelectStream(), split(), new Parse(), new Stringify()))
+    .then((data) => pumpify(
+      data.Payload,
+      new S3SelectStream(),
+      split(),
+      new Parse(),
+      new Stringify(),
+      zlib.createGzip(),
+      ))
   const params = {
     Bucket: bucket,
     Key: destKey,
