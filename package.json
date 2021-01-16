@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "aws-sdk": "^2.828.0",
+    "binary-split": "^1.0.5",
+    "pumpify": "^2.0.1",
+    "split": "^1.0.1",
+    "split2": "^3.2.2"
+  }
+}
